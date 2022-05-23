@@ -1,0 +1,10 @@
+CREATE TABLE [Minions] (
+	[Id] INT PRIMARY KEY,
+	[Name] NVARCHAR(20) NOT NULL,
+	[Age] TINYINT
+)
+
+CREATE TABLE [Towns] (
+	[Id] INT PRIMARY KEY,
+	[Name] NVARCHAR(60) NOT NUll,
+)

@@ -1,0 +1,4 @@
+ALTER TABLE [Users] DROP [PK__Users__3214EC072124677F]
+
+ALTER TABLE [Users] ADD CONSTRAINT [PK_MultipleKey] PRIMARY KEY([id], [Username])
+

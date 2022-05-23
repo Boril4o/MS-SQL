@@ -1,0 +1,2 @@
+ALTER TABLE [Minions]
+ADD [Townid] INT FOREIGN KEY REFERENCES [Towns]([Id]) 

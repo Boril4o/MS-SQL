@@ -1,0 +1,10 @@
+ALTER TABLE [Users] DROP [PK_MultipleKey]
+
+ALTER TABLE [Users]
+ADD CONSTRAINT [PK_IdKey] PRIMARY KEY ([Id])
+
+ALTER TABLE [Users]
+ADD CONSTRAINT [UQ_Username] UNIQUE ([Username])
+
+ALTER TABLE [Users]
+ADD CHECK (LEN([Username]) >= 3)
