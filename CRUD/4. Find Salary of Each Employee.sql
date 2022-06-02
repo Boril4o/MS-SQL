@@ -1,0 +1,1 @@
+SELECT [FirstName], [Lastname], [Salary] FROM [Employees]
