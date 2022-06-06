@@ -1,0 +1,33 @@
+CREATE DATABASE [University]
+
+USE [University]
+
+CREATE TABLE [Majors](
+[MajorID] INT PRIMARY KEY IDENTITY NOT NULL,
+[Name] VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE [Subjects] (
+[SubjectID] INT PRIMARY KEY IDENTITY NOT NULL,
+[SubjectName] VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE [Students] (
+[StudentID] INT PRIMARY KEY IDENTITY NOT NULL,
+[StudentNumber] VARCHAR(15) NOT NULL,
+[StudentName] NVARCHAR(50) NOT NULL,
+[MajorID] INT FOREIGN KEY REFERENCES [Majors]([MajorID]) NOT NULL
+)
+
+CREATE TABLE [Agenta] (
+[StudentID] INT FOREIGN KEY REFERENCES [Students]([StudentID]) NOT NULL,
+[SubjectID] INT FOREIGN KEY REFERENCES [Subjects]([SubjectID]) NOT NULL
+PRIMARY KEY([StudentID], [SubjectID])
+)
+
+CREATE TABLE [Payments] (
+[PaymentID] INT PRIMARY KEY IDENTITY NOT NULL,
+[PaymentDate] DATE NOT NULL,
+[PaymentAmount] DECIMAL NOT NULL,
+[StudentID] INT FOREIGN KEY REFERENCES [Students]([StudentID])
+)
